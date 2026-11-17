@@ -1,0 +1,36 @@
+==id $Id: dvdnav_lib.sfd,v 1.2 2026/11/14 $
+* dvdnav.library: DVD-Video navigation (libdvdread and libdvdnav inside).
+* The structures and constants are in <libraries/dvdnav.h>. This file and
+* the headers made from it: (c) 2026 Brian King, MIT. The library itself
+* is GPL-3.0-or-later.
+==base _DvdNavBase
+==basetype struct Library *
+==libname dvdnav.library
+==bias 30
+==public
+==include <exec/types.h>
+==include <libraries/dvdnav.h>
+==version 1
+APTR DvdOpen(struct DvdReader * reader, ULONG flags) (a0,d0)
+VOID DvdClose(APTR dvd) (a0)
+LONG DvdNextBlock(APTR dvd, APTR buf, struct DvdEvent * event) (a0,a1,a2)
+LONG DvdButton(APTR dvd, LONG action, LONG button) (a0,d0,d1)
+LONG DvdPoint(APTR dvd, LONG x, LONG y, LONG activate) (a0,d0,d1,d2)
+LONG DvdHighlight(APTR dvd, struct DvdHighlight * highlight, LONG mode) (a0,a1,d0)
+LONG DvdMenu(APTR dvd, LONG menu) (a0,d0)
+LONG DvdPlay(APTR dvd, LONG title, LONG chapter) (a0,d0,d1)
+LONG DvdChapter(APTR dvd, LONG how) (a0,d0)
+LONG DvdSeekTime(APTR dvd, ULONG ms) (a0,d0)
+LONG DvdSkip(APTR dvd, LONG what) (a0,d0)
+LONG DvdGetInfo(APTR dvd, struct DvdInfo * info) (a0,a1)
+LONG DvdStreamInfo(APTR dvd, LONG type, LONG stream, struct DvdStreamInfo * info) (a0,d0,d1,a1)
+LONG DvdSetStream(APTR dvd, LONG type, LONG stream) (a0,d0,d1)
+LONG DvdSetLanguage(APTR dvd, LONG type, CONST_STRPTR lang) (a0,d0,a1)
+LONG DvdSetRegion(APTR dvd, ULONG mask) (a0,d0)
+LONG DvdAngle(APTR dvd, LONG angle) (a0,d0)
+CONST_STRPTR DvdError(APTR dvd) (a0)
+CONST_STRPTR DvdVersion() ()
+LONG DvdTitleLength(APTR dvd, LONG title, ULONG * ms) (a0,d0,a1)
+* 1.2
+ULONG DvdMenus(APTR dvd) (a0)
+==end

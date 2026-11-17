@@ -1,0 +1,43 @@
+Short:        DVD-Video navigation library (libdvdnav)
+Author:       Brian King; libdvdread and libdvdnav by VideoLAN et al.
+Uploader:     Brian King
+Type:         util/libs
+Version:      1.7
+Architecture: m68k-amigaos >= 3.0.0
+Distribution: Aminet
+Requires:     68020+
+Replaces:     -
+
+dvdnav.library gives any program DVD-Video navigation: VideoLAN's
+libdvdread 7.1.1 and libdvdnav 7.0.0, the libraries VLC, mpv and Kodi
+play DVDs with, as an Exec library.
+
+- The program reads the disc (a drive's sectors, or an image file)
+  through a reader it gives the library.
+- The library reads the disc's file system and IFOs, runs the DVD's
+  virtual machine (menus, buttons, titles, chapters, angles, still
+  frames) and hands back the MPEG-2 Program Stream one 2048-byte block at
+  a time, with events for stills, palettes, streams, highlights and
+  jumps. Decoding and drawing are the program's.
+- 68020 or better, no FPU needed. About 30 KB of the caller's stack when
+  a title is opened: call it from a process with 48 KB.
+- CSS-scrambled discs only with an optional libdvdcss library, which is
+  not part of this archive.
+
+Contents:
+  dvdnav/Libs/dvdnav.library             copy to LIBS:
+  dvdnav/Include/                        the headers, for programmers
+  dvdnav/dvdnav_lib.sfd                  the functions
+  dvdnav/README.md, CHANGES
+
+Licence: the library is GPL-3.0-or-later (libdvdread and libdvdnav are
+GPL-2.0-or-later: COPYING.libdvdread, COPYING.libdvdnav); its source is
+at
+
+  https://github.com/luvwagn/dvdnav.library
+
+The headers and the .sfd are MIT, so any program may be built against
+them and open the library at run time.
+
+Made for AmigaMCE, a media centre for the Amiga (formerly
+amcedvd.library there).

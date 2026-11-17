@@ -1,0 +1,20 @@
+Changes made for dvdnav.library (formerly amcedvd.library) to libdvdread 7.1.1 and
+libdvdnav 7.0.0, as released by VideoLAN (Ubuntu's orig tarballs,
+SHA-256 a0d47876548bec806774bbf8dbf20bb19ba139464383156b32eb8e59915b90a9
+and a2a18f5ad36d133c74bf9106b6445806fa253b09141a46392550394b647b221e).
+Only src/, AUTHORS, COPYING and README.md are kept; meson's build files
+are replaced by the Makefile and src/port.
+
+14 November 2026, Brian King:
+
+libdvdread/src/dvd_input.c, file_seek():
+    the stream's seek position is computed as (uint64_t)blocks * 2048,
+    not (off_t)blocks * 2048: off_t is 32-bit on AmigaOS, and a DVD
+    passes 2 GB.
+
+libdvdnav/src/vm/decoder.c, eval_set_op() (the RND command), and
+libdvdnav/src/vm/play.c, play_PGC() (random program playback):
+    the random number is scaled with 64-bit integers, not float and
+    double: no floating point is needed in the library.
+
+Each changed line carries a "dvdnav.library:" comment.

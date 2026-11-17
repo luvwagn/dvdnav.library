@@ -39,5 +39,5 @@ at
 The headers and the .sfd are MIT, so any program may be built against
 them and open the library at run time.
 
-Made for AmigaMCE, a media centre for the Amiga (formerly
-amcedvd.library there).
+Made for Ambiance, an Amiga Media Center application
+(formerly amcedvd.library there).

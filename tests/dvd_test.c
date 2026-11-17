@@ -16,7 +16,7 @@
 #include <proto/exec.h>
 #include <proto/dvdnav.h>
 #ifdef DVD_TEST_DVDDISC
-#include "dvddisc.h"                        /* (a program's own reader, tested too: AmigaMCE's) */
+#include "dvddisc.h"                        /* (a program's own reader, tested too: Ambiance's) */
 #endif
 struct Library *DvdNavBase;
 #else
@@ -412,7 +412,7 @@ int main(int argc, char **argv)
     DvdClose(NULL);
 
 #ifdef DVD_TEST_DVDDISC
-    /* a program's own reader (AmigaMCE's src/dvddisc.c, built with
+    /* a program's own reader (Ambiance's src/dvddisc.c, built with
      * -DDVD_TEST_DVDDISC) on the same image: to the menu, and every sector
      * the same as stdio's */
     {

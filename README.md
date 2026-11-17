@@ -10,9 +10,9 @@ and hands back the MPEG-2 Program Stream one 2048-byte block at a time,
 with events for what the player must do (flush, still, palette, streams,
 highlight, jumps). Decoding and drawing are the program's.
 
-Made for AmigaMCE, a media centre for the Amiga, which opens it at run
-time to play DVDs and DVD images. It was called `amcedvd.library` there
-(1.0 to 1.6).
+Made for Ambiance, an Amiga Media Center application, which opens it at
+run time to play DVDs and DVD images. It was called `amcedvd.library`
+there (1.0 to 1.6), when Ambiance was AmigaMCE.
 
 - 68020 or better; no FPU needed.
 - libdvdread 7.1.1 and libdvdnav 7.0.0 (`third_party/`), as released,
